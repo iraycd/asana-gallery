@@ -1,0 +1,18 @@
+db:
+  image: postgres:9.5.3
+cache:
+  image: redis:3.2.1
+web:
+  build: .
+  links:
+    - db
+    - cache
+  volumes:
+    - ".:/src"
+  ports:
+    - "8889:8889"
+  command: npm run dev:watch
+  environment:
+    - PGHOST=db
+    - PGDATABASE=postgres
+    - PGUSER=postgres

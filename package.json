@@ -1,0 +1,59 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev:watch": "NODE_ENV=development node_modules/.bin/babel-node src/build/watch.js",
+    "build:static": "NODE_ENV=production node_modules/.bin/babel-node src/static.js",
+    "build:client": "NODE_ENV=production node_modules/.bin/babel-node src/build/client.js",
+    "build:server": "NODE_ENV=production node_modules/.bin/babel-node src/build/server.js",
+    "serve": "NODE_ENV=production node dist",
+    "static": "npm run clean && cp -R public dist && npm run build:static && npm run build:server",
+    "build": "npm run clean && npm run build:server && npm run build:client",
+    "start": "npm run serve",
+    "dev": "npm run dev:watch",
+    "prod": "npm run build && npm run serve",
+    "clean": "rm -rf dist",
+    "dev:docker": "docker-compose up"
+  },
+  "engines": {
+    "node": ">=5.0",
+    "npm": ">=3.3"
+  },
+  "dependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.23.1",
+    "dataloader": "^1.2.0",
+    "express": "^4.13.4",
+    "express-graphql": "^0.5.3",
+    "fast-simplex-noise": "^2.1.1",
+    "graphql": "^0.6.0",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-style-loader": "^1.0.0",
+    "json-loader": "^0.5.4",
+    "knex": "^0.11.7",
+    "lodash": "^4.12.0",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.13.0",
+    "pg": "^6.0.1",
+    "pify": "^2.3.0",
+    "postcss-loader": "^0.9.1",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-router": "^2.4.1",
+    "source-map-support": "^0.4.2",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-react-hmre": "^1.1.1",
+    "watch": "^0.18.0",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
