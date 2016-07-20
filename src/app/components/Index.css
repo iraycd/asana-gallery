@@ -1,3 +1,33 @@
-.Index {
-  color: blue;
+.IndexContainer {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.IndexContent {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  color: cornflowerblue;
+}
+
+.IndexHeader {
+  text-align: center;
+  font-size: 80px;
+}
+
+.IndexImage {
+  display: block;
+  box-sizing: border-box;
+  border: 1px cornflowerblue solid;
+}
+
+.IndexItem {
+  display: inline-block;
+}
+
+.IndexCaption {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  background-color: cornflowerblue;
+  color: white;
 }

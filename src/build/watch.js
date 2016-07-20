@@ -59,11 +59,11 @@ function onBuild (err, stats) {
           backendReady = true;
           maybeOpenBrowser();
         }
-      })
+      });
+      serv.on('error', restart);
+      serv.on('exit', restart);
     } else {
       serv.kill();
-      serv.on('exit', restart);
-      serv.on('error', restart);
     }
   }
 }

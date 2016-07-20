@@ -9,7 +9,7 @@ const STATS_OPTS = {
 
 function logStats (err, stats) {
   if (err) console.error(err);
-  console.log(stats.toString(STATS_OPTS))
+  console.log(stats.toString(STATS_OPTS));
 }
 
 webpack(webpackConfig).run(logStats)
